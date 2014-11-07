@@ -10,8 +10,12 @@ angular.module('darkroomchatApp', [
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/',
+        resolve: { socket : 'socket'}
       });
 
     $locationProvider.html5Mode(true);
+  })
+  .factory('socket', function() {
+    return io.connect('http://localhost:9000');
   });
