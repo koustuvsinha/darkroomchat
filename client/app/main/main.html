@@ -14,7 +14,7 @@
     <div class="col-lg-12">
           <h1 class="page-header">Lets Chat!</h1>
       <div class="row">
-        <div class="well">  
+        <div class="well" scroll-glue="glued">  
           <ul class="message">
             <li ng-repeat="msg in msgs track by $index">{{msg.sender}} - {{msg.chat}}</li>
           </ul>

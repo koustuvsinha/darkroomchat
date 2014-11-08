@@ -7,7 +7,7 @@ angular.module('darkroomchatApp')
     $http.get('/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
     });
-
+      
     $scope.msgs = [];
 
     $scope.sendMsg = function() {

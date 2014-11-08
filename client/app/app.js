@@ -16,6 +16,6 @@ angular.module('darkroomchatApp', [
 
     $locationProvider.html5Mode(true);
   })
-  .factory('socket', function() {
-    return io.connect('http://localhost:9000');
+  .factory('socket', function() {  
+    return io.connect();
   });
