@@ -9,31 +9,45 @@
   </div>
 </header>
 
+<!--  Entry form here -->
+
 <div class="container">
   <div class="row">
-    <div class="col-lg-12">
-          <h1 class="page-header">Lets Chat!</h1>
+
+    <h2>Welcome to Dark Room chat</h2>
+    <hr>
+    <h4>Answer a few questions and start chatting!</h4>
+    <hr>
+    <form role="form" ng-submit="submit()">
       <div class="row">
-        <div class="well" scroll-glue="glued">  
-          <ul class="message">
-            <li ng-repeat="msg in msgs track by $index">{{msg.sender}} - {{msg.chat}}</li>
-          </ul>
-        </div>
-        <form ng-submit="sendMsg()">
-          <div class="col-xs-3">
-            <input class="form-control" type="text" ng-model="chat.sender" placeholder="Anonymous"/>
-          </div>
-          <div class="col-xs-8">
-            <input class="form-control" type="text" ng-model="chat.msg" placeholder="hi there!"/>
-          </div>
-          <div class="col-xs-1">
-            <input type="submit" class="btn btn-primary" value="Submit"/>
-          </div>
-        </form>
+        <div class="col-xs-4">Name</div>
+        <div class="col-xs-4"><input type="text" ng-model="user_name" class="form-control" placeholder="Your name here" /></div>
+        <div class="col-xs-4">{{errorName}}</div>
       </div>
-    </div>
+      <div class="row">
+        <div class="col-xs-4">Gender</div>
+        <div class="col-xs-4">
+          <div class="radio">
+            <label><input type="radio" ng-model="gender" id="genderMale" value="M" checked>Male </label>
+            </div><div class="radio">
+            <label><input type="radio" ng-model="gender" id="genderFemale" value="F">Female </label>
+          </div>
+        </div>
+        <div class="col-xs-4">{{errorGender}}</div>
+      </div>
+       <div class="row">
+        <div class="col-xs-4"></div>
+        <div class="col-xs-4"><input type="submit" value="Submit" id="submit" /></div>
+        <div class="col-xs-4"></div>
+      </div>
+    </form>
+    <hr>
+      
+
   </div>
+
 </div>
+
 
 <footer class="footer">
   <div class="container">
